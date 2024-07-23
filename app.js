@@ -1,11 +1,12 @@
-const app = document.getElementById("app");
+const container = document.getElementById("container");
 
 async function getimg() {
-  const res = await fetch("http://localhost8080/");
+  const res = await fetch("http://localhost:8080/images");
   const data = await res.json();
   for (let i = 0; i < data.length; i++) {
     const img = document.createElement("img");
     img.src = data[i];
-    app.appendChild(img);
+    container.appendChild(img);
   }
 }
+getimg();
